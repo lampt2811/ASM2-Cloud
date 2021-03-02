@@ -8,9 +8,9 @@
 	if (isset($_POST['save'])) {
 		$office = $_POST['OfficeID'];
 		$quantity = $_POST['Qty'];
-        $product = $_POST['ProductID'];
+        $product = $_POST['ProductCode'];
         try {
-            $query = "INSERT INTO inventory (OfficeID, Qty, ProductID) VALUES ('$office', '$quantity', '$product')";
+            $query = "INSERT INTO inventory (OfficeID, Qty, ProductCode) VALUES ('$office', '$quantity', '$product')";
             $inventory = pg_query($conn, $query);
             if(!$inventory) {
                 echo 'Something went wrong, please try again';
@@ -57,15 +57,15 @@
                             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter quantity" name="Qty">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">ProductID</label>
+                            <label for="exampleInputPassword1">ProductCode</label>
                             <br>
-                            <select name='ProductID'>
+                            <select name='ProductCode'>
                             <option>Select Product</option>
                             <?php
                             $sqli = "select * from product";
                             $result = pg_query($conn,$sqli);
                             while ($row = pg_fetch_row($result)){
-                                echo "<option value=".$row['ProductID']." >".$row['Name']."</option>";
+                                echo "<option value=".$row['ProductCode']." >".$row['Name']."</option>";
                             }
                             ?>
                             </select>

@@ -10,7 +10,7 @@
 			$inventory = pg_fetch_row($record);
 			$office = $product['OfficeID'];
 			$quantity = $product['Qty'];
-            $product = $product['ProductID'];
+            $product = $product['ProductCode'];
 		}
 	}
 ?>
@@ -18,9 +18,9 @@
     if (isset($_POST['update'])) {
         $updatedOffice = $_POST['OfficeID'];
         $updatedQuantity2 = $_POST['Qty'];
-        $updatedProduct = $_POST['ProductID'];
+        $updatedProduct = $_POST['ProductCode'];
     
-        pg_query($conn, "UPDATE inventory SET OfficeID='$updatedOffice', Qty='$updatedQuantity2', ProductID='$updatedProduct = $_POST['ProductID'];
+        pg_query($conn, "UPDATE inventory SET OfficeID='$updatedOffice', Qty='$updatedQuantity2', ProductCode='$updatedProduct = $_POST['ProductCode'];
         ' WHERE InventoryID=$id");
         // $_SESSION['message'] = "Address updated!"; 
         echo '<script>window.location.href = "inventory.php";</script>';
@@ -56,15 +56,15 @@
                                     
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">ProductID</label>
+                                    <label for="exampleInputPassword1">ProductCode</label>
                                     <br>
-                                    <select name='ProductID'>
+                                    <select name='ProductCode'>
                                     <option>Select Product</option>
                                     <?php
                                     $sqli = "select * from product";
                                     $result = pg_query($conn,$sqli);
                                     while ($row = pg_fetch_row($result)){
-                                        echo "<option value=".$row['ProductID']." >".$row['Name']."</option>";
+                                        echo "<option value=".$row['ProductCode']." >".$row['Name']."</option>";
                                     }
                                     ?>
                                     </select>

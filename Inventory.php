@@ -34,7 +34,7 @@
                                             <th>ID</th>
                                             <th>OfficeID</th>
                                             <th>Quantity</th>
-                                            <th>ProductID</th>
+                                            <th>ProductCode</th>
                                             <th>More</th>
                                             
                                         </tr>
@@ -46,7 +46,7 @@
                                             <td><?php echo $row['InventoryID']; ?></td>
                                             <td><?php echo $row['OfficeID']; ?></td>
                                             <td><?php echo $row['Qty']; ?></td>
-                                            <td><?php echo $row['ProductID']; ?></td>
+                                            <td><?php echo $row['ProductCode']; ?></td>
                                             <td>
                                                 <a href="addiventory.php?edit=<?php echo $row['InventoryID']; ?>" class="btn btn-primary active" >update</a>
                                                 <a href="inventory.php?del=<?php echo $row['InventoryID']; ?>" class="btn btn-danger active">Delete</a>

@@ -39,15 +39,15 @@
                 <div class="card-body">
                     <form method="post" action="addorder.php">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">ProductID</label>
+                            <label for="exampleInputEmail1">ProductCode</label>
                             <br>
-                            <select name='ProductID'>
+                            <select name='ProductCode'>
                             <option >Select Product</option>
                             <?php
                                 $sqlie = "select * from product";
                                 $results = pg_query($conn,$sqlie);
                                 while ($rows = pg_fetch_row($results)){
-                                    echo "<option value=".$rows['ProductID']." >".$rows['Name']."</option>";
+                                    echo "<option value=".$rows['ProductCode']." >".$rows['Name']."</option>";
                                 }
                             ?>
                             </select>

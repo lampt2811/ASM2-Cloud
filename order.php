@@ -31,11 +31,10 @@
                 <thead>
                     <tr>
                         <th>OderID</th>
-                        <th>ProductID</th>
-                        <th>BillID</th>
+                        <th>ProductCode</th>
+                        <th>Price</th>
                         <th>Quantity</th>
                         <th>More</th>
-                        
                     </tr>
                 </thead>
                 
@@ -43,8 +42,8 @@
                 <?php while ($row = pg_fetch_row($orders)) { ?>
                     <tr>
                         <td><?php echo $row['OrderID']; ?></td>
-                        <td><?php echo $row['ProductID']; ?></td>
-                        <td><?php echo $row['BillID']; ?></td>
+                        <td><?php echo $row['ProductCode']; ?></td>
+                        <td><?php echo $row['Price']; ?></td>
                         <td><?php echo $row['Qty']; ?></td>
                         <td>
 

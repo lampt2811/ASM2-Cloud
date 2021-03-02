@@ -6,7 +6,7 @@
     if (isset($_GET['del'])) {
         $id = $_GET['del'];
         try {
-            pg_query($conn, "DELETE FROM product WHERE ProductID = $id");
+            pg_query($conn, "DELETE FROM product WHERE ProductCode = $id");
             echo '<script>window.location.href = "product.php";</script>';
         } catch (Exception $e) {
             echo 'Message: ' .$e->getMessage();
@@ -43,13 +43,13 @@
                                     <tbody>
                                     <?php while ($row = pg_fetch_row($products)) { ?>
                                         <tr>
-                                            <td><?php echo $row['ProductID']; ?></td>
+                                            <td><?php echo $row['ProductCode']; ?></td>
                                             <td><?php echo $row['Name']; ?></td>
                                             <td><?php echo $row['QtyInStock']; ?></td>
                                             <td><?php echo $row['Price']; ?></td>
                                             <td>
-                                                <a href="updateProduct.php?edit=<?php echo $row['ProductID']; ?>" class="btn btn-primary active" >Update</a>
-                                                <a href="product.php?del=<?php echo $row['ProductID']; ?>" class="btn btn-danger active">Delete</a>
+                                                <a href="updateProduct.php?edit=<?php echo $row['ProductCode']; ?>" class="btn btn-primary active" >Update</a>
+                                                <a href="product.php?del=<?php echo $row['ProductCode']; ?>" class="btn btn-danger active">Delete</a>
                                             </td>
                                         </tr>
                                     <?php } ?>
