@@ -1,7 +1,7 @@
 <?php  include('template/header.php'); ?>
 <?php  include('database.php'); ?>
 <?php
-    $offficeID = "";
+    $officeID = "";
 	$quantity = "";
 	$productCode = "";
 

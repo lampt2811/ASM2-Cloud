@@ -9,7 +9,7 @@
 	if (isset($_POST['save'])) {
         //header("Location: http://localhost/ASM2-Cloud/product.php"); 
 		$name = $_POST['name'];
-		$quantity = $_POST['Quantity'];
+		$quantity = $_POST['quantity'];
 		$price = $_POST['price'];
         try {
             pg_query($conn, "insert into product (Name, Quantity, Price) values ('".$_POST['name']."','".$_POST['quantity']."','".$_POST['price']."')"); 
