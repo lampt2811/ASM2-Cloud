@@ -3,14 +3,14 @@
 <?php
     $offfice = "";
 	$quantity = "";
-	$product = "";
+	$productCode = "";
 
 	if (isset($_POST['save'])) {
 		$office = $_POST['OfficeID'];
 		$quantity = $_POST['Qty'];
-        $product = $_POST['ProductCode'];
+        $productCode = $_POST['ProductCode'];
         try {
-            $query = "INSERT INTO inventory (OfficeID, Qty, ProductCode) VALUES ('$office', '$quantity', '$product')";
+            $query = "INSERT INTO inventory (OfficeID, Qty, ProductCode) VALUES ('$office', '$quantity', '$productCode')";
             $inventory = pg_query($conn, $query);
             if(!$inventory) {
                 echo 'Something went wrong, please try again';
