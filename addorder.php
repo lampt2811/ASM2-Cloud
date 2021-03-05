@@ -1,16 +1,16 @@
 <?php  include('template/header.php'); ?>
 <?php  include('database.php'); ?>
 <?php
-    $productCode = "";
-	$bill = "";
-	$quantity = "";
+    $ProductCode = "";
+	$Price = "";
+	$Quantity = "";
 
 	if (isset($_POST['save'])) {
-		$productCode = $_POST['OrderID'];
-		$bill = $_POST['BillID'];
-        $quantity = $_POST['Qty'];
+		$ProductCode = $_POST['OrderID'];
+		$Price = $_POST['BillID'];
+        $Quantity = $_POST['Qty'];
         try {
-            $query = "INSERT INTO orderproduct (OrderID, BillID, Qty) VALUES ('$productCode', '$bill', '$quantity')";
+            $query = "INSERT INTO orderproduct (ProductCode, Price, Quantity) VALUES ('$ProductCode', '$Price', '$Quantity')";
             $orderproduct = pg_query($conn, $query);
             if(!$orderproduct) {
                 echo 'Something went wrong, please try again';
