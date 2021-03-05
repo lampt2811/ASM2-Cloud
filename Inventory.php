@@ -12,9 +12,7 @@
             echo 'Message: ' .$e->getMessage();
         }
     }
-
 ?>
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 

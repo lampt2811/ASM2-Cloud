@@ -43,8 +43,8 @@
                                     <tbody>
                                     <?php while ($row = pg_fetch_row($products)) { ?>
                                         <tr>
-                                            <td><?php echo $row['ProductCode']; ?></td>
-                                            <td><?php echo $row['Name']; ?></td>
+                                            <td><?php echo $row['0']; ?></td>
+                                            <td><?php echo $row['1']; ?></td>
                                             <td><?php echo $row['QtyInStock']; ?></td>
                                             <td><?php echo $row['Price']; ?></td>
                                             <td>
