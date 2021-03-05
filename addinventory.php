@@ -7,7 +7,7 @@
 
 	if (isset($_POST['save'])) {
 		$officeID = $_POST['OfficeID'];
-		$quantity = $_POST['Qty'];
+		$quantity = $_POST['Quantity'];
         $productCode = $_POST['ProductCode'];
         try {
             $query = "INSERT INTO inventory (OfficeID, Quantity, ProductCode) VALUES ('$officeID', '$quantity', '$productCode')";
@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <form method="post" action="addinventory.php">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Office</label>
+                            <label for="exampleInputEmail1">OfficeID</label>
                             <br>
                             <select name='OfficeID'>
                             <option >Select Office</option>

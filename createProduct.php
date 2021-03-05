@@ -35,12 +35,12 @@
                         <div class="card-body">
                             <form method="post" action="createProduct.php">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name Product</label>
+                                    <label for="exampleInputEmail1">Name</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter name" name="name">
                                     
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Quantity in stock</label>
+                                    <label for="exampleInputPassword1">Quantity</label>
                                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter quanity" name="qtyInStock">
                                 </div>
                                 <div class="form-group">
