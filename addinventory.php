@@ -10,7 +10,7 @@
 		$quantity = $_POST['Qty'];
         $productCode = $_POST['ProductCode'];
         try {
-            $query = "INSERT INTO inventory (Office, Quantity, ProductCode) VALUES ('$OfficeID', '$Quantity', '$ProductCode')";
+            $query = "INSERT INTO inventory (OfficeID, Quantity, ProductCode) VALUES ('$officeID', '$quantity', '$productCode')";
             $inventory = pg_query($conn, $query);
             if(!$inventory) {
                 echo 'Something went wrong, please try again';

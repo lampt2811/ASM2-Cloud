@@ -2,17 +2,17 @@
 <?php  include('database.php'); ?>
 
 <?php
-    $Name = "";
-	$Quantity = "";
+    $name = "";
+	$quantity = "";
 	$price = 0;
 
 	if (isset($_POST['save'])) {
         //header("Location: http://localhost/ASM2-Cloud/product.php"); 
-		$Name = $_POST['name'];
-		$Quantity = $_POST['qtyInStock'];
-		$Price = $_POST['price'];
+		$name = $_POST['name'];
+		$quantity = $_POST['Quantity'];
+		$price = $_POST['price'];
         try {
-            pg_query($conn, "insert into product (Name, QtyInStock, Price) values ('$Name', '$Quantity', '$Price')"); 
+            pg_query($conn, "insert into product (Name, Quantity, Price) values ('$name', '$quantity', '$price')"); 
 		    echo '<script>window.location.href = "product.php";</script>';
             exit();
         } catch (Exception $e) {
