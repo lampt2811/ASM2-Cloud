@@ -12,7 +12,7 @@
 		$quantity = $_POST['Quantity'];
 		$price = $_POST['price'];
         try {
-            pg_query($conn, "insert into product (Name, Quantity, Price) values ('$name', '$quantity', '$price')"); 
+            pg_query($conn, "insert into product (Name, Quantity, Price) values ('".$_POST['name']."','".$_POST['quantity']."','".$_POST['price']."')"); 
 		    echo '<script>window.location.href = "product.php";</script>';
             exit();
         } catch (Exception $e) {
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Quantity</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter quanity" name="qtyInStock">
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter quanity" name="quantity">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Price</label>
