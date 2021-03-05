@@ -11,15 +11,20 @@
 		$name = $_POST['name'];
 		$quantity = $_POST['qtyInStock'];
 		$price = $_POST['price'];
-        try {
-            pg_query($conn, "INSERT INTO product (Name, QtyInStock, Price) VALUES ('$name', '$quantity', '$price')"); 
-		    echo '<script>window.location.href = "product.php";</script>';
-            exit();
-        } catch (Exception $e) {
-            echo 'Message: ' .$e->getMessage();
-        }
+
+            pg_query($conn, "INSERT INTO product (Name, QtyInStock, Price) 
+            VALUES ('$name', '$quantity', '$price')"); 
+            $result = pg_query($connect, $query);
+            echo '<script>window.location.href = "product.php";</script>';
+            pg_close($connect);
+ 
+
 		
-	}
+    }
+    
+            pg_query($conn, "INSERT INTO product (Name, QtyInStock, Price) 
+            VALUES ('$name', '$quantity', '$price')"); 
+            $result = pg_query($connect, $query);
 ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -60,3 +65,17 @@
             <!-- End of Main Content -->
 
 <?php  include('template/footer.php'); ?>           
+
+/*
+if ($connect === false) 
+    {
+      die("ERROR: Could not connect to the database server!");
+    } 
+  else 
+    {
+      echo ("Connect successfully!");
+      $product_name = $_POST['product-name'];
+      $product_price = $_POST['product-price'];
+      $product_amount = $_POST['product-amount'];
+    }
+    */
