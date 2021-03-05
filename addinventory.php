@@ -1,9 +1,9 @@
 <?php  include('template/header.php'); ?>
 <?php  include('database.php'); ?>
 <?php
-    $OffficeID = "";
-	$Quantity = "";
-	$ProductCode = "";
+    $offficeID = "";
+	$quantity = "";
+	$productCode = "";
 
 	if (isset($_POST['save'])) {
 		$officeID = $_POST['OfficeID'];
