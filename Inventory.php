@@ -22,7 +22,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="addInventory.php" class="btn btn-success active" role="button" aria-pressed="true">Add Inventory</a>
+                            <a href="addinventory.php" class="btn btn-success active" role="button" aria-pressed="true">Add Inventory</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
