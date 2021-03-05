@@ -41,12 +41,12 @@
                                     </thead>
                                     
                                     <tbody>
-                                    <?php while ($row = pg_fetch_row($products)) { ?>
+                                    <?php while ($row = pg_fetch_assoc($products)) { ?>
                                         <tr>
-                                            <td><?php echo $row['0']; ?></td>
-                                            <td><?php echo $row['1']; ?></td>
-                                            <td><?php echo $row['QtyInStock']; ?></td>
-                                            <td><?php echo $row['Price']; ?></td>
+                                            <td><?php echo $row['id']; ?></td>
+                                            <td><?php echo $row['name']; ?></td>
+                                            <td><?php echo $row['quantity']; ?></td>
+                                            <td><?php echo $row['price']; ?></td>
                                             <td>
                                                 <a href="updateProduct.php?edit=<?php echo $row['ProductCode']; ?>" class="btn btn-primary active" >Update</a>
                                                 <a href="product.php?del=<?php echo $row['ProductCode']; ?>" class="btn btn-danger active">Delete</a>
